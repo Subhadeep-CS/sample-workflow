@@ -1,5 +1,9 @@
 name: Sequential Job Execution
-on: push
+on:
+  workflow_run:
+    workflows: [Second Workflow]
+    types:
+      - completed
 jobs:
   validate-file:
     runs-on: ubuntu-latest
